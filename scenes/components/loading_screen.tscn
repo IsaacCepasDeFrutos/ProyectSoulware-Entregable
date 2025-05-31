@@ -1,0 +1,203 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsmmd5rdibakp"]
+
+[ext_resource type="Script" path="res://scripts/loading_screen.gd" id="1_rmpbi"]
+[ext_resource type="FontFile" uid="uid://do080gaxhrnhx" path="res://img/sprites/interfaz/Soulware2-Regular.ttf" id="2_8dwna"]
+[ext_resource type="Texture2D" uid="uid://khoht7rpyayj" path="res://img/ChatGPT Image 11 may 2025, 21_14_42.png" id="2_cvior"]
+
+[sub_resource type="Animation" id="Animation_trwc7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["cargando..."]
+}
+
+[sub_resource type="Animation" id="Animation_e71uq"]
+resource_name = "fade_in"
+length = 2.0667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.16667, 1.46667, 1.76667, 2.0667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["cargando", "cargando.", "cargando..", "cargando...", "cargando", "cargando.", "cargando..", "cargando..."]
+}
+
+[sub_resource type="Animation" id="Animation_lyv4y"]
+resource_name = "fade_out"
+length = 2.0667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_srlh0"]
+_data = {
+"RESET": SubResource("Animation_trwc7"),
+"fade_in": SubResource("Animation_e71uq"),
+"fade_out": SubResource("Animation_lyv4y")
+}
+
+[node name="loadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rmpbi")
+
+[node name="loadingScreen" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="loadingScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="loadingScreen/VBoxContainer"]
+position = Vector2(1956, 695)
+texture = ExtResource("2_cvior")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="loadingScreen"]
+libraries = {
+"": SubResource("AnimationLibrary_srlh0")
+}
+autoplay = "fade_out"
+speed_scale = 0.5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="loadingScreen"]
+z_index = 101
+texture_filter = 1
+offset_left = 155.0
+offset_top = 1135.0
+offset_right = 514.0
+offset_bottom = 1190.0
+scale = Vector2(8, 8)
+theme_override_fonts/normal_font = ExtResource("2_8dwna")
+text = "cargando..."
+fit_content = true
+tab_size = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="loadingScreen"]
+z_index = 101
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 741.0
+offset_top = 1322.0
+offset_right = -1478.0
+offset_bottom = -31.9999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_fonts/normal_font = ExtResource("2_8dwna")
+text = "pulsa espacio para continuar"
+fit_content = true
+tab_size = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="loadingScreen"]
+z_index = 101
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 165.0
+offset_top = 145.0
+offset_right = -1990.0
+offset_bottom = -851.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_fonts/normal_font = ExtResource("2_8dwna")
+text = "Proyecto Soulware es, en su esencia, una demo técnica destinada a explorar las posibilidades de la inteligencia artificial generativa para dotar de “vida” a los personajes.
+
+El proyecto nació entre 2024 y 2025 como parte del Trabajo de Fin de Grado en Desarrollo de Aplicaciones Multiplataforma. Desde sus inicios, contemplamos la idea de llevar esta demo más allá de los requisitos académicos.
+
+Somos plenamente conscientes de la magnitud y complejidad de este desarrollo, así como de nuestras limitaciones en conocimientos, tiempo y presupuesto. Aun así, os presentamos con cariño el fruto de nuestro esfuerzo en los últimos meses, con la ilusión de que lo disfrutéis y nos brindéis vuestras opiniones y críticas para mejorar.
+
+Muchas gracias.
+
+Hemos preparado el juego para funcionar con vuestra propia API key de ChatGPT. Si dispones de una key, podrás usarla directamente sin configuración adicional ni necesidad de acceder a nuestra cuenta durante la beta cerrada.
+"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 100
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -749.0
+offset_top = -1199.0
+offset_right = 864.0
+offset_bottom = 731.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 101
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 118.0
+offset_right = -1139.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(0.0666667, 0.423529, 0.501961, 1)
+
+[connection signal="animation_finished" from="loadingScreen/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

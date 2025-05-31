@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxyb0ry0vcdbh"]
+
+[ext_resource type="Script" path="res://scripts/texture_progress_bar.gd" id="1_xdc3m"]
+
+[sub_resource type="Gradient" id="Gradient_lhlhh"]
+offsets = PackedFloat32Array(0, 0.518519, 1)
+colors = PackedColorArray(0.618418, 0.0413311, 9.62615e-08, 1, 0.929412, 0.788235, 0, 1, 0.138018, 0.751147, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3t2mp"]
+gradient = SubResource("Gradient_lhlhh")
+width = 1000
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer5" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1050, 15)
+layout_mode = 1
+offset_right = 1061.0
+offset_bottom = 117.0
+alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+mouse_filter = 2
+value = 50.0
+texture_over = SubResource("GradientTexture2D_3t2mp")
+texture_progress_offset = Vector2(0, 100)
+script = ExtResource("1_xdc3m")
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer5/TextureProgressBar"]
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 27.0
+offset_right = 25.0
+offset_bottom = 39.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

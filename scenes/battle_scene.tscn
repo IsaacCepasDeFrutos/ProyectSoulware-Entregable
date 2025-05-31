@@ -1,0 +1,349 @@
+[gd_scene load_steps=16 format=3 uid="uid://4s0k06dp2ubi"]
+
+[ext_resource type="Script" path="res://scenes/BattleScene.gd" id="1_w5q52"]
+[ext_resource type="Script" path="res://scripts/BattleUI.gd" id="2_g4lp1"]
+[ext_resource type="Texture2D" uid="uid://bjbhssevwchfh" path="res://img/sprites/interfaz/bien/frame_panel.png" id="3_2qyrp"]
+[ext_resource type="PackedScene" uid="uid://dl7lt061fyicu" path="res://scenes/components/player.tscn" id="3_8vtig"]
+[ext_resource type="Script" path="res://scenes/action_buttons.gd" id="3_w5xdk"]
+[ext_resource type="Script" path="res://scripts/Combatant.gd" id="3_wwlem"]
+[ext_resource type="PackedScene" uid="uid://csldnjy5c1s75" path="res://scenes/components/character.tscn" id="4_ec8hk"]
+[ext_resource type="Texture2D" uid="uid://cxbilfl0hnhb5" path="res://img/sprites/interfaz/bien/boton_long_unpress.png" id="4_ml322"]
+[ext_resource type="FontFile" uid="uid://do080gaxhrnhx" path="res://img/sprites/interfaz/Soulware2-Regular.ttf" id="4_qvuje"]
+[ext_resource type="Texture2D" uid="uid://wpse4ibkqdnu" path="res://img/sprites/interfaz/bien/boton_long_press.png" id="5_4r71p"]
+[ext_resource type="FontFile" uid="uid://b50bj0igud88a" path="res://img/sprites/interfaz/Soulware2-Regular.otf" id="6_3g4gv"]
+[ext_resource type="AudioStream" uid="uid://ysdhxi847juk" path="res://songs/keyboard-click-327728.mp3" id="7_hk3h3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_slu3s"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_isyhx"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_2cx26"]
+font_size = 100
+font_color = Color(1, 0, 0, 1)
+
+[node name="BattleScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_w5q52")
+
+[node name="BattleUI" type="Control" parent="."]
+anchors_preset = 0
+script = ExtResource("2_g4lp1")
+
+[node name="FramePanel" type="Sprite2D" parent="BattleUI"]
+visible = false
+texture_filter = 1
+position = Vector2(1697, 786)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("3_2qyrp")
+
+[node name="Background" type="ColorRect" parent="BattleUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="PlayerPanel" type="Panel" parent="BattleUI"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 600.0
+offset_right = 450.0
+offset_bottom = 800.0
+
+[node name="PlayerHP" type="Label" parent="BattleUI/PlayerPanel"]
+custom_minimum_size = Vector2(380, 180)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 390.0
+offset_bottom = 190.0
+theme_override_fonts/font = ExtResource("4_qvuje")
+text = "HP: 100/100"
+label_settings = SubResource("LabelSettings_slu3s")
+
+[node name="ATBProgress" type="ProgressBar" parent="BattleUI/PlayerPanel"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 159.0
+offset_right = 402.0
+offset_bottom = 199.0
+theme_override_fonts/font = ExtResource("4_qvuje")
+theme_override_font_sizes/font_size = 30
+step = 1.0
+
+[node name="MPProgress" type="ProgressBar" parent="BattleUI/PlayerPanel"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 69.0
+offset_right = 401.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("4_qvuje")
+theme_override_font_sizes/font_size = 30
+step = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="BattleUI/PlayerPanel/MPProgress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_qvuje")
+theme_override_font_sizes/font_size = 30
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyPanel" type="Panel" parent="BattleUI"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 0
+offset_left = 2100.0
+offset_top = 50.0
+offset_right = 2500.0
+offset_bottom = 250.0
+
+[node name="EnemyHP" type="Label" parent="BattleUI/EnemyPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("4_qvuje")
+text = "HP: 100/100"
+label_settings = SubResource("LabelSettings_isyhx")
+horizontal_alignment = 2
+
+[node name="ATBProgress" type="ProgressBar" parent="BattleUI/EnemyPanel"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 159.0
+offset_right = 402.0
+offset_bottom = 199.0
+theme_override_fonts/font = ExtResource("4_qvuje")
+theme_override_font_sizes/font_size = 30
+step = 1.0
+
+[node name="MPProgress" type="ProgressBar" parent="BattleUI/EnemyPanel"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 69.0
+offset_right = 401.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("4_qvuje")
+theme_override_font_sizes/font_size = 30
+step = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="BattleUI/EnemyPanel/MPProgress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_qvuje")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionButtons" type="VBoxContainer" parent="BattleUI"]
+layout_mode = 0
+offset_left = 1943.0
+offset_top = 580.0
+offset_right = 2547.0
+offset_bottom = 1181.0
+theme_override_constants/separation = 35
+script = ExtResource("3_w5xdk")
+
+[node name="AttackButton" type="TextureButton" parent="BattleUI/ActionButtons"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_ml322")
+texture_pressed = ExtResource("5_4r71p")
+texture_hover = ExtResource("5_4r71p")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="BattleUI/ActionButtons/AttackButton"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("6_3g4gv")
+theme_override_font_sizes/font_size = 32
+text = "Atacar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkillButton" type="TextureButton" parent="BattleUI/ActionButtons"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_ml322")
+texture_pressed = ExtResource("5_4r71p")
+texture_hover = ExtResource("5_4r71p")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="BattleUI/ActionButtons/SkillButton"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 23.0
+offset_right = 192.0
+offset_bottom = 46.0
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("6_3g4gv")
+theme_override_font_sizes/font_size = 32
+text = "Habilidades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemButton" type="TextureButton" parent="BattleUI/ActionButtons"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_ml322")
+texture_pressed = ExtResource("5_4r71p")
+texture_hover = ExtResource("5_4r71p")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="BattleUI/ActionButtons/ItemButton"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 42.0
+offset_top = 22.0
+offset_right = 190.0
+offset_bottom = 45.0
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("6_3g4gv")
+theme_override_font_sizes/font_size = 32
+text = "Inventario"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RunButton" type="TextureButton" parent="BattleUI/ActionButtons"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_ml322")
+texture_pressed = ExtResource("5_4r71p")
+texture_hover = ExtResource("5_4r71p")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="BattleUI/ActionButtons/RunButton"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("6_3g4gv")
+theme_override_font_sizes/font_size = 32
+text = "Huir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="BattleUI/ActionButtons"]
+stream = ExtResource("7_hk3h3")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="BattleUI/ActionButtons"]
+stream = ExtResource("7_hk3h3")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="BattleLog" type="TextEdit" parent="BattleUI"]
+custom_minimum_size = Vector2(2000, 300)
+layout_mode = 0
+offset_left = 280.0
+offset_top = 1100.0
+offset_right = 2280.0
+offset_bottom = 1400.0
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_qvuje")
+theme_override_font_sizes/font_size = 28
+placeholder_text = "Hola"
+editable = false
+scroll_smooth = true
+
+[node name="SkillPanel" type="Panel" parent="BattleUI"]
+visible = false
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 0
+offset_left = 1444.0
+offset_top = 597.0
+offset_right = 1944.0
+offset_bottom = 997.0
+
+[node name="SkillList" type="VBoxContainer" parent="BattleUI/SkillPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemPanel" type="Panel" parent="BattleUI"]
+visible = false
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 0
+offset_left = 1444.0
+offset_top = 597.0
+offset_right = 1944.0
+offset_bottom = 997.0
+
+[node name="ItemList" type="VBoxContainer" parent="BattleUI/ItemPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="player" parent="BattleUI" instance=ExtResource("3_8vtig")]
+visible = false
+position = Vector2(1444, 597)
+script = ExtResource("3_wwlem")
+
+[node name="character" parent="BattleUI" instance=ExtResource("4_ec8hk")]
+visible = false
+position = Vector2(1444, 597)
+script = ExtResource("3_wwlem")
+
+[node name="CriticalLabel" type="Label" parent="BattleUI"]
+visible = false
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 455.0
+offset_right = 1446.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("4_qvuje")
+text = "¡CRÍTICO!"
+label_settings = SubResource("LabelSettings_2cx26")
+horizontal_alignment = 1
+vertical_alignment = 1

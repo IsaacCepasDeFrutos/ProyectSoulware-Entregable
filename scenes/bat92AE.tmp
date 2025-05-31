@@ -1,0 +1,137 @@
+[gd_scene load_steps=7 format=3 uid="uid://4s0k06dp2ubi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_slu3s"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_isyhx"]
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fql4"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_illm6"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.301961, 0.301961, 0.301961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ot8np"]
+bg_color = Color(0.113725, 0.113725, 0.113725, 1)
+
+[sub_resource type="Theme" id="Theme_nwben"]
+Button/styles/hover = SubResource("StyleBoxFlat_7fql4")
+Button/styles/normal = SubResource("StyleBoxFlat_illm6")
+Button/styles/pressed = SubResource("StyleBoxFlat_ot8np")
+
+[node name="BattleScene" type="Node2D"]
+
+[node name="BattleUI" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="BattleUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="PlayerPanel" type="Panel" parent="BattleUI"]
+custom_minimum_size = Vector2(400, 200)
+offset_left = 50.0
+offset_top = 600.0
+offset_right = 450.0
+offset_bottom = 800.0
+
+[node name="PlayerHP" type="Label" parent="BattleUI/PlayerPanel"]
+custom_minimum_size = Vector2(380, 180)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 390.0
+offset_bottom = 190.0
+text = "HP: 100/100"
+label_settings = SubResource("LabelSettings_slu3s")
+
+[node name="EnemyPanel" type="Panel" parent="BattleUI"]
+custom_minimum_size = Vector2(400, 200)
+offset_left = 2100.0
+offset_top = 50.0
+offset_right = 2500.0
+offset_bottom = 250.0
+
+[node name="EnemyHP" type="Label" parent="BattleUI/EnemyPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "HP: 100/100"
+label_settings = SubResource("LabelSettings_isyhx")
+horizontal_alignment = 2
+
+[node name="ActionButtons" type="VBoxContainer" parent="BattleUI"]
+custom_minimum_size = Vector2(500, 400)
+offset_left = 2000.0
+offset_top = 600.0
+offset_right = 2500.0
+offset_bottom = 1000.0
+theme_override_constants/separation = 20
+
+[node name="AttackButton" type="Button" parent="BattleUI/ActionButtons"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+theme = SubResource("Theme_nwben")
+theme_override_font_sizes/font_size = 36
+text = "Atacar"
+
+[node name="SkillButton" type="Button" parent="BattleUI/ActionButtons"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+theme = SubResource("Theme_nwben")
+theme_override_font_sizes/font_size = 36
+text = "Habilidad"
+
+[node name="ItemButton" type="Button" parent="BattleUI/ActionButtons"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+theme = SubResource("Theme_nwben")
+theme_override_font_sizes/font_size = 36
+text = "Objeto"
+
+[node name="RunButton" type="Button" parent="BattleUI/ActionButtons"]
+custom_minimum_size = Vector2(480, 80)
+layout_mode = 2
+theme = SubResource("Theme_nwben")
+theme_override_font_sizes/font_size = 36
+text = "Huir"
+
+[node name="BattleLog" type="TextEdit" parent="BattleUI"]
+custom_minimum_size = Vector2(2000, 300)
+offset_left = 280.0
+offset_top = 1100.0
+offset_right = 2280.0
+offset_bottom = 1400.0
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+placeholder_text = "Hola"
+editable = false
+scroll_smooth = true
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(300, 900)
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 0, 1)
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+position = Vector2(2000, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Enemy"]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)

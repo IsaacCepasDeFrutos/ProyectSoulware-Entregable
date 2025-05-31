@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bo1obbe36itmy"
+
+[deps]
+
+files=["res://data/logs/dialog_.user.translation", "res://data/logs/dialog_.npc.translation"]
+
+source_file="res://data/logs/dialog_.csv"
+dest_files=["res://data/logs/dialog_.user.translation", "res://data/logs/dialog_.npc.translation"]
+
+[params]
+
+compress=true
+delimiter=0

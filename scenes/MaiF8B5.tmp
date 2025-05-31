@@ -1,0 +1,179 @@
+[gd_scene load_steps=7 format=3 uid="uid://b66a3y58wehyw"]
+
+[ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_3uwtp"]
+[ext_resource type="AudioStream" uid="uid://ysdhxi847juk" path="res://songs/keyboard-click-327728.mp3" id="2_2wh52"]
+[ext_resource type="Texture2D" uid="uid://beprxy5pq7ag3" path="res://img/sprites/backgrounds/mainMenu/backgroundMenu.jpg" id="2_lvymq"]
+[ext_resource type="Texture2D" uid="uid://cxbilfl0hnhb5" path="res://img/sprites/interfaz/bien/boton_long_unpress.png" id="2_ow34m"]
+[ext_resource type="Texture2D" uid="uid://wpse4ibkqdnu" path="res://img/sprites/interfaz/bien/boton_long_press.png" id="4_l72w3"]
+[ext_resource type="FontFile" uid="uid://b50bj0igud88a" path="res://img/sprites/interfaz/Soulware2-Regular.otf" id="5_826wr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3uwtp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.5
+offset_top = -93.5
+offset_right = 162.5
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="NewGame" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ow34m")
+texture_pressed = ExtResource("4_l72w3")
+texture_hover = ExtResource("4_l72w3")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/NewGame"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("5_826wr")
+theme_override_font_sizes/font_size = 32
+text = "New Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoadGame" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ow34m")
+texture_pressed = ExtResource("4_l72w3")
+texture_hover = ExtResource("4_l72w3")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/LoadGame"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("5_826wr")
+theme_override_font_sizes/font_size = 32
+text = "Load game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ow34m")
+texture_pressed = ExtResource("4_l72w3")
+texture_hover = ExtResource("4_l72w3")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Settings"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("5_826wr")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ow34m")
+texture_pressed = ExtResource("4_l72w3")
+texture_hover = ExtResource("4_l72w3")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Credits"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("5_826wr")
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_ow34m")
+texture_pressed = ExtResource("4_l72w3")
+texture_hover = ExtResource("4_l72w3")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Exit"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("5_826wr")
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("2_2wh52")
+volume_db = -10.0
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("2_2wh52")
+volume_db = -10.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00684, 1.00766)
+mouse_filter = 2
+texture = ExtResource("2_lvymq")
+expand_mode = 1

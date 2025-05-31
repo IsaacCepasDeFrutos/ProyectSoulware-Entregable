@@ -1,0 +1,73 @@
+The MIT License (MIT)
+
+Copyright © May 27, 2025  
+Isaac Cepas De Frutos, Alejandro Rodriguez Ortega, Daniel Canales Ramos
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+### Additional Clause – Patent Use Restriction and Technical Disclosure
+
+This project introduces and openly discloses a novel game system that utilizes Generative Artificial Intelligence in two key areas:
+
+1. **NPC interaction system**: Conversations and behaviors of non-playable characters (NPCs) are dynamically generated or adapted using generative AI models (e.g., language models or multimodal systems).  
+2. **Event management system**: The triggering and coordination of in-game events are handled by generative AI-based logic that reacts to game state, player behavior, or contextual input.
+
+These systems are publicly shared as part of this work and may be used by anyone, even for commercial purposes, under the condition that:
+
+- No patent may be filed, in whole or in part, that claims ownership of these ideas, implementations, or methods.  
+- The authors and the public retain an irrevocable right to use, modify, and distribute these systems.  
+- This clause ensures that the innovation remains open and cannot be restricted by proprietary claims.
+
+These conditions do not override or restrict the permissions granted by the MIT License.
+
+---
+
+### Additional Clause – Visible Attribution Requirement
+
+If this software, or any substantial portion of it, is used as the basis for a published game or commercial product, **visible credit must be given** to the original authors. This includes, at minimum, a mention in the game’s credits or official documentation.
+
+This clause is fully compatible with the MIT License.
+
+---
+
+## Licencia MIT (MIT)
+
+Copyright © 27 de mayo de 2025  
+Isaac Cepas De Frutos, Alejandro Rodriguez Ortega, Daniel Canales Ramos
+
+Por la presente se concede permiso, sin cargo, a cualquier persona que obtenga una copia de este software y de los archivos de documentación asociados (el "Software"), para utilizar el Software sin restricción, incluyendo sin limitación los derechos de usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del Software, y permitir a las personas a quienes se les proporcione el Software hacerlo, sujeto a las siguientes condiciones:
+
+La nota de copyright anterior y esta nota de permiso deberán incluirse en todas las copias o partes sustanciales del Software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES SERÁN RESPONSABLES DE NINGUNA RECLAMACIÓN, DAÑO U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN CONTRACTUAL, AGRAVIO O DE OTRO TIPO, QUE SURJA DE, O EN CONEXIÓN CON EL SOFTWARE O EL USO U OTROS TRATOS EN EL SOFTWARE.
+
+---
+
+### Cláusula Adicional – Prohibición de Patentes y Divulgación Técnica
+
+Este proyecto presenta y libera abiertamente un sistema novedoso de videojuego que utiliza Inteligencia Artificial Generativa en dos áreas clave:
+
+1. **Sistema de interacción con NPCs**: Las conversaciones y comportamientos de los personajes no jugables (NPCs) se generan o adaptan dinámicamente mediante modelos de IA generativa (por ejemplo, modelos de lenguaje o sistemas multimodales).  
+2. **Sistema de gestión de eventos**: La ejecución y coordinación de eventos dentro del juego se maneja mediante lógica basada en IA generativa, que responde al estado del juego, comportamiento del jugador o entradas contextuales.
+
+Estos sistemas se comparten públicamente como parte de esta obra y pueden ser utilizados por cualquier persona, incluso con fines comerciales, bajo la condición de que:
+
+- No se podrá registrar ninguna patente, total ni parcialmente, que reivindique propiedad sobre estas ideas, implementaciones o métodos.  
+- Los autores y el público conservan el derecho irrevocable de usar, modificar y distribuir estos sistemas.  
+- Esta cláusula garantiza que la innovación permanezca abierta y no pueda ser restringida mediante reclamaciones de propiedad exclusiva.
+
+Estas condiciones no invalidan ni restringen los permisos otorgados por la Licencia MIT.
+
+---
+
+### Cláusula Adicional – Atribución Visible Obligatoria
+
+Si este software, o una parte sustancial del mismo, se utiliza como base para un videojuego publicado o producto comercial, se deberá otorgar un **crédito visible** a los autores originales. Esto incluye, como mínimo, una mención en los créditos del juego o en su documentación oficial.
+
+Esta cláusula es totalmente compatible con la Licencia MIT.

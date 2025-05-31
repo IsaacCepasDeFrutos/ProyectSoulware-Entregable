@@ -1,0 +1,23 @@
+Main authors and contributors:
+
+- [Isaac Cepas De Frutos] – Original concept, project direction, implementation of the AI-driven event system and adaptive dialogue system.  
+- [Alejandro Rodriguez Ortega] – Development of the AI event system and technical support for innovative gameplay mechanics.  
+- [Daniel Canales Ramos] – Contribution to art, user interface, and auxiliary code unrelated to the aforementioned systems.
+
+All authors agree to release this project under the MIT License with an additional clause prohibiting appropriation through patent claims.
+
+Copyright © May 27, 2025 – Isaac Cepas De Frutos
+
+---
+
+Autores y colaboradores principales:
+
+- [Isaac Cepas De Frutos] – Idea original, dirección del proyecto, implementación del sistema de eventos IA y sistema de diálogo adaptativo.  
+- [Alejandro Rodriguez Ortega] – Desarrollo del sistema IA para eventos y soporte técnico en mecánicas innovadoras.  
+- [Daniel Canales Ramos] – Colaboración en arte, interfaz y código auxiliar no relacionado con los sistemas mencionados.
+
+Todos los autores acuerdan liberar este proyecto bajo la Licencia MIT con cláusula adicional de no apropiación mediante patentes.
+
+Copyright © 27 de mayo de 2025 – Isaac Cepas De Frutos
+
+

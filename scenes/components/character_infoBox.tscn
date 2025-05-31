@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6skj35oo4qkd"]
+
+[ext_resource type="Script" path="res://scripts/label_character_info.gd" id="1_bqsrk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgx8w"]
+shadow_color = Color(0.0687983, 0.0687983, 0.0687983, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(5, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_13w43"]
+font_size = 28
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 1052.0
+offset_bottom = 543.0
+
+[node name="Label" type="Label" parent="Container"]
+z_index = 2
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vgx8w")
+text = "Información extra sobre la persona."
+label_settings = SubResource("LabelSettings_13w43")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Character_info_Label" type="Label" parent="Container"]
+z_index = 2
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vgx8w")
+label_settings = SubResource("LabelSettings_13w43")
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("1_bqsrk")

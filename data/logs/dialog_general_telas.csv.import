@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bljbkbdxbntto"
+
+[deps]
+
+files=["res://data/logs/dialog_general_telas.user.translation", "res://data/logs/dialog_general_telas.npc.translation"]
+
+source_file="res://data/logs/dialog_general_telas.csv"
+dest_files=["res://data/logs/dialog_general_telas.user.translation", "res://data/logs/dialog_general_telas.npc.translation"]
+
+[params]
+
+compress=true
+delimiter=0

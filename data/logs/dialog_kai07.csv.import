@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://78g301y8ula1"
+
+[deps]
+
+files=["res://data/logs/dialog_kai07.user.translation", "res://data/logs/dialog_kai07.npc.translation"]
+
+source_file="res://data/logs/dialog_kai07.csv"
+dest_files=["res://data/logs/dialog_kai07.user.translation", "res://data/logs/dialog_kai07.npc.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://qtxpmf3gm8w"
+
+[deps]
+
+files=["res://data/logs/dialog_lena.user.translation", "res://data/logs/dialog_lena.npc.translation"]
+
+source_file="res://data/logs/dialog_lena.csv"
+dest_files=["res://data/logs/dialog_lena.user.translation", "res://data/logs/dialog_lena.npc.translation"]
+
+[params]
+
+compress=true
+delimiter=0

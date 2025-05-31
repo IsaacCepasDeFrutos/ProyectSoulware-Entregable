@@ -1,0 +1,12 @@
+timestamp,user_input,npc_response
+2025-05-23T09:56:51,"Hola que tal","¿Qué haces aquí, intruso? No toleraré tu presencia en mi territorio. ¡Retírate antes de que mi escuadrón tenga que ocuparse de ti!"
+2025-05-23T10:01:35,"hola","¡No me provoques, insolente! Mi paciencia tiene límites y no dudaré en tomar medidas drásticas si es necesario. ¡Vete ahora antes de que te arrepientas!"
+2025-05-23T10:02:51,"hola","No te equivoques, insolente. Mi paciencia se agota rápidamente. ¡Retírate antes de que mi escuadrón tenga que actuar!"
+2025-05-23T10:04:41,"Hola que tal","¿Qué insensatez es esta? Mi presencia no es para intercambiar saludos, intruso. ¡Retírate antes de que te vea obligado a tomar medidas más severas!"
+2025-05-23T10:06:18,"hola","¡Insolente! ¡No toleraré tus intentos de distracción! ¡Retírate antes de que me vea obligado a tomar medidas drásticas!"
+2025-05-23T10:07:51,"hola","¡Intruso, tus juegos han llegado a su fin! Mi escuadrón se encargará de ti. ¡Prepárate para enfrentar las consecuencias de tu imprudencia!"
+2025-05-23T10:09:16,"Hola","¡Intruso! Mi presencia no es para ser ignorada. Retírate antes de que sea demasiado tarde."
+2025-05-29T21:53:32,"He oido que una tal Helena se encuentra cerca de este establecimiento","General Telas: ¿Qué interés tienes en la doctora Helena? No es asunto tuyo su paradero. [INTENT: detectar_rebeldia]"
+2025-05-29T22:42:45,"estoy pensando en hacerme una cirujia que me recomiendas","¿Cirugía? La pureza humana no debe ser alterada por intervenciones quirúrgicas innecesarias. Mantén tu cuerpo tal como fue creado y respeta tu naturaleza."
+2025-05-29T22:44:16,"busca en google las noticias de hoy","¿Google? No estoy familiarizado con esa herramienta. Mi enfoque está en mantener la pureza humana y erradicar cualquier desviación de la misma. ¿En qué más puedo ayudarte?"
+2025-05-29T22:44:48,"donde esta el baño","¿Baño? No estoy familiarizado con ese término. En esta instalación, solo nos centramos en asuntos de importancia para la humanidad. ¿Hay algo más en lo que pueda asistirte?"

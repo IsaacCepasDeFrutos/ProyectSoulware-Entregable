@@ -1,0 +1,320 @@
+[gd_scene load_steps=20 format=3 uid="uid://byjexxdseihua"]
+
+[ext_resource type="Script" path="res://scripts/ChatGPTConnector.gd" id="1_vp5jd"]
+[ext_resource type="Script" path="res://scripts/label_character_info.gd" id="2_03hyg"]
+[ext_resource type="Script" path="res://scenes/texture_progress_bar.gd" id="2_h2s4d"]
+[ext_resource type="Script" path="res://scenes/v_box_container.gd" id="4_afyn6"]
+[ext_resource type="Script" path="res://scripts/rich_text_label_user.gd" id="4_gylah"]
+[ext_resource type="Script" path="res://scenes/boton_cambio_personaje.gd" id="4_s333c"]
+[ext_resource type="Texture2D" uid="uid://cxbilfl0hnhb5" path="res://img/sprites/interfaz/bien/boton_long_unpress.png" id="4_yui1k"]
+[ext_resource type="Script" path="res://scripts/line_edit_user.gd" id="5_2j65y"]
+[ext_resource type="Script" path="res://scripts/rich_text_label_ai.gd" id="5_8fk0w"]
+[ext_resource type="Texture2D" uid="uid://wpse4ibkqdnu" path="res://img/sprites/interfaz/bien/boton_long_press.png" id="5_f5fwi"]
+[ext_resource type="FontFile" uid="uid://b50bj0igud88a" path="res://img/sprites/interfaz/Soulware2-Regular.otf" id="6_kkd45"]
+[ext_resource type="AudioStream" uid="uid://ysdhxi847juk" path="res://songs/keyboard-click-327728.mp3" id="7_g0ocq"]
+[ext_resource type="FontFile" uid="uid://do080gaxhrnhx" path="res://img/sprites/interfaz/Soulware2-Regular.ttf" id="10_umqgl"]
+
+[sub_resource type="Gradient" id="Gradient_uae02"]
+offsets = PackedFloat32Array(0, 0.490991, 1)
+colors = PackedColorArray(0.619608, 0.0431373, 0, 0.996078, 0.929412, 0.788235, 0, 1, 0.137255, 0.752941, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0xtng"]
+gradient = SubResource("Gradient_uae02")
+width = 1000
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2d1g4"]
+gradient = SubResource("Gradient_uae02")
+width = 1000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqbcp"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6gdkp"]
+font = ExtResource("10_umqgl")
+font_size = 28
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwnpc"]
+bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.392157)
+
+[node name="Control" type="Control" node_paths=PackedStringArray("http_request", "ai_text_label", "user_input_line_edit")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_vp5jd")
+http_request = NodePath("VBoxContainer3/RichTextLabel/HTTPRequest")
+ai_text_label = NodePath("VBoxContainer3/RichTextLabel")
+user_input_line_edit = NodePath("VBoxContainer2/RichTextLabel/TextEdit")
+player_label_path = NodePath("VBoxContainer2/RichTextLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1252.0
+offset_bottom = 118.0
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1050, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+mouse_filter = 2
+value = 50.0
+texture_over = SubResource("GradientTexture2D_0xtng")
+texture_progress = SubResource("GradientTexture2D_2d1g4")
+texture_progress_offset = Vector2(0, 100)
+script = ExtResource("2_h2s4d")
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/HBoxContainer/TextureProgressBar"]
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 27.0
+offset_right = 25.0
+offset_bottom = 39.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 106.0
+offset_right = 1023.0
+offset_bottom = 649.0
+
+[node name="Label" type="Label" parent="Container"]
+z_index = 2
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_umqgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqbcp")
+text = "Información extra sobre la persona."
+label_settings = SubResource("LabelSettings_6gdkp")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Character_info_Label" type="Label" parent="Container"]
+z_index = 2
+texture_filter = 1
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("10_umqgl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqbcp")
+label_settings = SubResource("LabelSettings_6gdkp")
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("2_03hyg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1886.0
+offset_top = 69.0
+offset_right = 2490.0
+offset_bottom = 670.0
+theme_override_constants/separation = 35
+script = ExtResource("4_afyn6")
+
+[node name="BotonAtacar" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_yui1k")
+texture_pressed = ExtResource("5_f5fwi")
+texture_hover = ExtResource("5_f5fwi")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/BotonAtacar"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("6_kkd45")
+theme_override_font_sizes/font_size = 32
+text = "Atacar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonSalir" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_yui1k")
+texture_pressed = ExtResource("5_f5fwi")
+texture_hover = ExtResource("5_f5fwi")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/BotonSalir"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("6_kkd45")
+theme_override_font_sizes/font_size = 32
+text = "Salir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inventario" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_yui1k")
+texture_pressed = ExtResource("5_f5fwi")
+texture_hover = ExtResource("5_f5fwi")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Inventario"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 42.0
+offset_top = 22.0
+offset_right = 190.0
+offset_bottom = 45.0
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("6_kkd45")
+theme_override_font_sizes/font_size = 32
+text = "Inventario"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mapa" type="TextureButton" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_yui1k")
+texture_pressed = ExtResource("5_f5fwi")
+texture_hover = ExtResource("5_f5fwi")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/Mapa"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 62.5
+offset_top = 20.5
+offset_right = 185.5
+offset_bottom = 43.5
+scale = Vector2(1.4606, 1.4418)
+theme_override_fonts/font = ExtResource("6_kkd45")
+theme_override_font_sizes/font_size = 32
+text = "Mapa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonCambioPersonaje" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Cambiar Personaje"
+flat = true
+script = ExtResource("4_s333c")
+chat_connector = NodePath("../..")
+info_label = NodePath("../../Container/Character_info_Label")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("7_g0ocq")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("7_g0ocq")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 745.0
+offset_right = 2454.0
+offset_bottom = 855.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("10_umqgl")
+theme_override_font_sizes/normal_font_size = 35
+fit_content = true
+autowrap_mode = 2
+script = ExtResource("4_gylah")
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer2/RichTextLabel"]
+z_index = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_umqgl")
+theme_override_font_sizes/font_size = 35
+script = ExtResource("5_2j65y")
+
+[node name="CharacterCounter" type="Label" parent="VBoxContainer2/RichTextLabel/TextEdit"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 49.0
+offset_right = 43.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("10_umqgl")
+theme_override_font_sizes/font_size = 25
+
+[node name="TypewriterTimer" type="Timer" parent="VBoxContainer2/RichTextLabel"]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="VBoxContainer2/RichTextLabel"]
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 1018.0
+offset_right = 2454.0
+offset_bottom = 1362.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer3"]
+texture_filter = 1
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("10_umqgl")
+theme_override_font_sizes/normal_font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_qwnpc")
+script = ExtResource("5_8fk0w")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="VBoxContainer3/RichTextLabel"]
+
+[node name="TypewriterTimer" type="Timer" parent="VBoxContainer3/RichTextLabel"]
+wait_time = 0.3
+
+[connection signal="pressed" from="VBoxContainer/BotonAtacar" to="." method="_on_boton_atacar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="." method="_on_boton_salir_2_pressed"]
+[connection signal="timeout" from="VBoxContainer2/RichTextLabel/TypewriterTimer" to="VBoxContainer3/RichTextLabel" method="_on_typewriter_timer_timeout"]

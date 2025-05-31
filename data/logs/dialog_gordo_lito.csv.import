@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bymuyaufocf52"
+
+[deps]
+
+files=["res://data/logs/dialog_gordo_lito.user.translation", "res://data/logs/dialog_gordo_lito.npc.translation"]
+
+source_file="res://data/logs/dialog_gordo_lito.csv"
+dest_files=["res://data/logs/dialog_gordo_lito.user.translation", "res://data/logs/dialog_gordo_lito.npc.translation"]
+
+[params]
+
+compress=true
+delimiter=0

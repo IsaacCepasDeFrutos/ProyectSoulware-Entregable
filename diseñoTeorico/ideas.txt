@@ -1,0 +1,30 @@
+Ideas  para el sistema de combate (por turnos):
+-Sistema de puntos de habilidad que ganas haciendo ataques.
+
+-Negociacion con los enemigos.
+
+-Sistema de alignment (similar a la de Shin Megami Tensei), dependiendo de hacia que bando pertenezcas sera mas facil convencer a los enemigos durante la negociacion.
+
+-Protagonista dos acciones por turno.
+
+-1 un personaje jugable (pendiente de ver la complejidad de añadir otro) y uno a x cantidad de enemigos.
+-Humano clásico: Potencia de fuego.
+-Humano mutado: Trickster.
+-Humano robotizado: Tanque.
+
+
+
+
+
+Ideas para kickstarter:
+-Para los que donen, les daremos la posibilidad de acceder a la toma de decisiones respecto al proyecto (actualizaciones).
+
+Inicio de la historia:
+Logan en su hogar con sus progenitores. El día de su 16 cumpleaños sus padres le brindan con una mejora a su elección genética o cibernética.
+>Introducción de habilidad: 
+
+	Justificación de UI:
+
+	Visión Mejorada: Detección de debilidades, Vista de relación con la persona.
+	Visión Cibernética: Cálculos de daño y vista de datos de persona.
+

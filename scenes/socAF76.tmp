@@ -1,0 +1,268 @@
+[gd_scene load_steps=19 format=3 uid="uid://byjexxdseihua"]
+
+[ext_resource type="Script" path="res://scripts/texture_progress_bar.gd" id="1_ug7ne"]
+[ext_resource type="Script" path="res://scripts/OobaBoogaTest.gd" id="1_vp5jd"]
+[ext_resource type="Script" path="res://scripts/label_character_info.gd" id="2_03hyg"]
+[ext_resource type="Texture2D" uid="uid://sehuu7tfaxky" path="res://img/sprites/characters/homeless/Idle.png" id="3_n7kfi"]
+[ext_resource type="Script" path="res://scripts/rich_text_label_user.gd" id="4_gylah"]
+[ext_resource type="Script" path="res://scripts/line_edit_user.gd" id="5_2j65y"]
+[ext_resource type="Script" path="res://scripts/rich_text_label_ai.gd" id="5_8fk0w"]
+
+[sub_resource type="Gradient" id="Gradient_lhlhh"]
+offsets = PackedFloat32Array(0, 0.518519, 1)
+colors = PackedColorArray(0.618418, 0.0413311, 9.62615e-08, 1, 0.929412, 0.788235, 0, 1, 0.138018, 0.751147, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v47qq"]
+gradient = SubResource("Gradient_lhlhh")
+width = 1000
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqbcp"]
+shadow_color = Color(0.0687983, 0.0687983, 0.0687983, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(5, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6gdkp"]
+font_size = 28
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_raolh"]
+atlas = ExtResource("3_n7kfi")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hveoo"]
+atlas = ExtResource("3_n7kfi")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmv5t"]
+atlas = ExtResource("3_n7kfi")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b86a8"]
+atlas = ExtResource("3_n7kfi")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qejv"]
+atlas = ExtResource("3_n7kfi")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3qwj"]
+atlas = ExtResource("3_n7kfi")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgllu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_raolh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hveoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmv5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b86a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qejv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3qwj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+script = ExtResource("1_vp5jd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.805366, 0.535415, 0.612412, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
+offset_top = 28.0
+offset_right = 1252.0
+offset_bottom = 145.0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1050, 15)
+layout_mode = 2
+alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+mouse_filter = 2
+value = 50.0
+texture_over = SubResource("GradientTexture2D_v47qq")
+texture_progress = SubResource("GradientTexture2D_v47qq")
+texture_progress_offset = Vector2(0, 100)
+script = ExtResource("1_ug7ne")
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/VBoxContainer/TextureProgressBar"]
+clip_contents = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 27.0
+offset_right = 25.0
+offset_bottom = 39.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 106.0
+offset_right = 1058.0
+offset_bottom = 649.0
+
+[node name="Label" type="Label" parent="Container"]
+z_index = 2
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqbcp")
+text = "Información extra sobre la persona."
+label_settings = SubResource("LabelSettings_6gdkp")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Character_info_Label" type="Label" parent="Container"]
+z_index = 2
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jqbcp")
+label_settings = SubResource("LabelSettings_6gdkp")
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("2_03hyg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1886.0
+offset_top = 69.0
+offset_right = 2490.0
+offset_bottom = 670.0
+theme_override_constants/separation = 35
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Atacar"
+flat = true
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Salir"
+flat = true
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Inventario"
+flat = true
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Mapa"
+flat = true
+
+[node name="BotonCambioPersonaje" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Cambiar Personaje"
+flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 745.0
+offset_right = 2454.0
+offset_bottom = 855.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+fit_content = true
+autowrap_mode = 2
+script = ExtResource("4_gylah")
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer2/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_2j65y")
+
+[node name="CharacterCounter" type="Label" parent="VBoxContainer2/RichTextLabel/LineEdit"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 41.0
+offset_bottom = 18.0
+
+[node name="TypewriterTimer" type="Timer" parent="VBoxContainer2/RichTextLabel"]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="VBoxContainer2/RichTextLabel"]
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 1018.0
+offset_right = 2471.0
+offset_bottom = 1362.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer3"]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("5_8fk0w")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="VBoxContainer3/RichTextLabel"]
+
+[node name="TypewriterTimer" type="Timer" parent="VBoxContainer3/RichTextLabel"]
+wait_time = 0.3
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1265.0
+offset_top = 60.0
+offset_right = 1890.0
+offset_bottom = 634.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer4"]
+texture_filter = 1
+position = Vector2(331, 295)
+scale = Vector2(4.33594, 4.41406)
+sprite_frames = SubResource("SpriteFrames_kgllu")
+autoplay = "default"
+frame_progress = 0.97278
+
+[connection signal="timeout" from="VBoxContainer2/RichTextLabel/TypewriterTimer" to="VBoxContainer3/RichTextLabel" method="_on_typewriter_timer_timeout"]
