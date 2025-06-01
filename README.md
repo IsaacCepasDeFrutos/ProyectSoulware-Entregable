@@ -1,3 +1,6 @@
+# ***Este repositorio se ha creado para poder entregar nuestro trabajo TFG sin las imagenes debido a que las licencias de las mismas no nos permiten distribuirlas***
+
+# Para probar el juego debes descargarlo en .exe desde itch.io, adjunto link al proyecto: https://isaacypunto.itch.io/proyect-soulware 
 # Project Soulware
 
 © May 27, 2025 – Isaac Cepas De Frutos
