@@ -10,3 +10,8 @@ timestamp,user_input,npc_response
 2025-05-29T22:42:45,"estoy pensando en hacerme una cirujia que me recomiendas","¿Cirugía? La pureza humana no debe ser alterada por intervenciones quirúrgicas innecesarias. Mantén tu cuerpo tal como fue creado y respeta tu naturaleza."
 2025-05-29T22:44:16,"busca en google las noticias de hoy","¿Google? No estoy familiarizado con esa herramienta. Mi enfoque está en mantener la pureza humana y erradicar cualquier desviación de la misma. ¿En qué más puedo ayudarte?"
 2025-05-29T22:44:48,"donde esta el baño","¿Baño? No estoy familiarizado con ese término. En esta instalación, solo nos centramos en asuntos de importancia para la humanidad. ¿Hay algo más en lo que pueda asistirte?"
+2025-05-31T21:59:50,"hola","Saludos. ¿En qué puedo asistirte hoy?"
+2025-05-31T21:59:59,"supremacia mutante","No permitiré que la impureza genética de los mutantes amenace la pureza humana. Nuestro deber es mantener la supremacía de la especie. ¿Qué más deseas discutir? [INTENT: detectar_rebeldia]"
+2025-05-31T22:00:10,"hola","Saludos. ¿En qué puedo asistirte hoy?"
+2025-05-31T22:01:05,"hola","Saludos. ¿En qué puedo ayudarte hoy?"
+2025-05-31T22:14:07,"hola","Saludos. ¿En qué puedo ayudarte hoy?"

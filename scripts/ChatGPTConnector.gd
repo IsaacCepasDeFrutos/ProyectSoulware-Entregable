@@ -46,7 +46,15 @@ const AFFINITY_COMBAT_THRESHOLD := 5
 func _ready() -> void:
 	add_child(api_config_dialog)
 	api_config_dialog.confirmed.connect(_on_api_key_confirmed)
-	api_config_dialog.popup_centered()
+	
+	 # Si ya hay api_key en el singleton, la usamos directamente
+	if SessionManager.api_key_global != "":
+		api_key = SessionManager.api_key_global
+		print("🔑 API-key obtenida de SessionManager (singleton).")
+	else:
+		# Si está vacío, mostramos el diálogo para pedirla solo UNA VEZ por ejecución
+		print("se ha abierto el api_config_dialog")
+		api_config_dialog.popup_centered()
 
 	http_request.request_completed.connect(_on_api_response)
 
@@ -229,8 +237,16 @@ func evaluate_affinity_change(user_input: String) -> int:
 # Guarda la API-Key introducida por el usuario tras confirmarla en
 # la ventana emergente de configuración.
 func _on_api_key_confirmed() -> void:
-	api_key = api_config_dialog.get_api_key()
-	print("🔑 API-key guardada")
+	var entered_key := api_config_dialog.get_api_key().strip_edges()
+	if entered_key == "":
+		push_warning("🚫 No ingresaste ninguna clave.")
+		return
+
+	# Guardamos la clave en memoria en el singleton
+	api_key = entered_key
+	SessionManager.api_key_global = entered_key
+	print("🔑 API-key guardada en SessionManager para esta sesión.")
+	api_config_dialog.hide()
 
 # Muestra visualmente la respuesta del NPC en pantalla, usando un
 # efecto de escritura si está disponible.

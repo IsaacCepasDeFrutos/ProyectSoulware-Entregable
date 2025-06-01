@@ -2796,13 +2796,14 @@ position = Vector2(884, 1187)
 
 [node name="Kai-07" parent="." instance=ExtResource("14_i5odf")]
 z_index = 45
-position = Vector2(380, 860)
+position = Vector2(380, 865)
 
 [node name="Lena" parent="." instance=ExtResource("15_iqvlw")]
 z_index = 45
 position = Vector2(1241, 578)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(526, 488)
 scale = Vector2(0.16, 0.16)
 navigation_polygon = SubResource("NavigationPolygon_0guo5")

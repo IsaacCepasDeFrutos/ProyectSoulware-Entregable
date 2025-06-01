@@ -19,10 +19,6 @@ func _ready() -> void:
 	fade_out_fondo.visible = false
 	DisplayManager._update_brightness()
 	
-	var mod = CanvasModulate.new()
-	mod.color = Color(0.2, 0.2, 0.25, 0.8) # tono azulado oscuro
-	get_tree().root.add_child(mod)
-	
 	# Verificación de nodos críticos
 	for n in [player_scripted, social_interface, battle_scene]:
 		if n == null:

@@ -96,3 +96,5 @@ timestamp,user_input,npc_response
 2025-05-30T16:59:35,"vengo a buscar a la doctora","La doctora no está aquí en este momento. ¿Hay algo más en lo que pueda ayudarte?"
 2025-05-31T13:16:22,"vengo a buscar a la doctora","La doctora no está aquí. ¿Hay algo más que necesitas o podemos dar por concluida esta interacción?"
 2025-05-31T18:48:45,"Vengo a ver a la doctora","¿Vienes a ver a la doctora? Entonces tendrás que buscar en otro lugar, ya que la doctora no se encuentra aquí. ¿Puedo ayudarte con algo más o concluimos esta interacción? [INTENT: ver_doctora_helena]"
+2025-05-31T21:59:26,"hola","Saludos. ¿En qué puedo ayudarte?"
+2025-06-01T12:20:43,"vengo a buscar a la doctora","La doctora no está aquí. ¿Hay algo más que necesitas o podemos dar por concluida esta interacción?"

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 BattleManager="*res://scripts/BattleManager.gd"
 NpcManager="*res://scripts/NPCManager.gd"
 DisplayManager="*res://scripts/DisplayManager.gd"
+SessionManager="*res://scripts/SessionManager.gd"
 
 [display]
 
